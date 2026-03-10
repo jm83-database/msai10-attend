@@ -53,6 +53,10 @@ class CosmosService:
         self.attendance_file = 'attendance.json'
         self.deleted_students_file = 'logs/deleted_students.json'
 
+        # Cosmos DB가 연결됐는데 데이터가 없으면 로컬 JSON에서 자동 마이그레이션
+        if self.use_cosmos:
+            self._migrate_from_json_if_needed()
+
     def _has_cosmos_credentials(self) -> bool:
         """Check if Cosmos DB credentials are available in environment."""
         return all([
@@ -72,6 +76,23 @@ class CosmosService:
         self.client = CosmosClient(endpoint, credential=key)
         database = self.client.get_database_client(db_name)
         self.container = database.get_container_client(container_name)
+
+    def _migrate_from_json_if_needed(self):
+        """로컬 JSON에서 Cosmos DB로 초기 데이터 마이그레이션 (최초 1회)."""
+        existing = self._load_students_cosmos()
+        if existing:
+            return
+
+        students_file = 'students.json'
+        if os.path.exists(students_file):
+            try:
+                with open(students_file, 'r', encoding='utf-8') as f:
+                    students = json.load(f)
+                if students:
+                    self._save_students_cosmos(students)
+                    print(f"[Migration] students.json → Cosmos DB ({self.cohort_id}) 마이그레이션 완료: {len(students)}명")
+            except Exception as e:
+                print(f"[Migration] 마이그레이션 실패: {e}")
 
     # ========== STUDENTS OPERATIONS ==========
 
