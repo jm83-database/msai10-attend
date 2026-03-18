@@ -1,13 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "최재현",
-        "present": false,
-        "code": "",
-        "timestamp": null,
-        "password": "4819"
-    },
-    {
         "id": 2,
         "name": "김도훈",
         "present": false,
@@ -265,6 +257,14 @@
     },
     {
         "id": 37,
+        "name": "최재현",
+        "present": false,
+        "code": "",
+        "timestamp": null,
+        "password": "4819"
+    },
+    {
+        "id": 38,
         "name": "최재혁",
         "present": false,
         "code": "",
@@ -272,7 +272,7 @@
         "password": "2427"
     },
     {
-        "id": 38,
+        "id": 39,
         "name": "홍채영",
         "present": false,
         "code": "",
