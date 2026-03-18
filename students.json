@@ -48,28 +48,12 @@
         "password": "3558"
     },
     {
-        "id": 7,
-        "name": "남기훈",
-        "present": false,
-        "code": "",
-        "timestamp": null,
-        "password": "4095"
-    },
-    {
         "id": 8,
         "name": "남길우",
         "present": false,
         "code": "",
         "timestamp": null,
         "password": "8630"
-    },
-    {
-        "id": 9,
-        "name": "모승우",
-        "present": false,
-        "code": "",
-        "timestamp": null,
-        "password": "6426"
     },
     {
         "id": 10,
@@ -216,14 +200,6 @@
         "password": "6202"
     },
     {
-        "id": 28,
-        "name": "장민교",
-        "present": false,
-        "code": "",
-        "timestamp": null,
-        "password": "8243"
-    },
-    {
         "id": 29,
         "name": "장민혜",
         "present": false,
@@ -279,8 +255,16 @@
         "timestamp": null,
         "password": "1733"
     },
-    {
+        {
         "id": 36,
+        "name": "최예리",
+        "present": false,
+        "code": "",
+        "timestamp": null,
+        "password": "5838"
+    },
+    {
+        "id": 37,
         "name": "최재혁",
         "present": false,
         "code": "",
@@ -288,7 +272,7 @@
         "password": "2427"
     },
     {
-        "id": 37,
+        "id": 38,
         "name": "홍채영",
         "present": false,
         "code": "",
